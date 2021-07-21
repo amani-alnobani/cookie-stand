@@ -124,8 +124,6 @@ City.prototype.render = function () {
 
 
 
-
-
 let form = document.getElementById('form');
 
 // adding the event listener
