@@ -168,7 +168,7 @@ function makeFooter() {
     lastTh.textContent = totalOftotal;
 }
 makeHeader();
-makeFooter();
+
 
 for (let i = 0; i < cityarray.length; i++) {
     // console.log(cityarray[i]);
@@ -177,7 +177,7 @@ for (let i = 0; i < cityarray.length; i++) {
     cityarray[i].render();
 
 }
-
+makeFooter();
 
 // console.log(parent);
 
