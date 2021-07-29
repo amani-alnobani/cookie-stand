@@ -1,16 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <a href="index.html">click here</a>
+    
 </head>
+
 <body>
-    <div id="parent"> </div>
+    
+    <header>
+        <h1>SHOPS</h1>
+    </header>
+    <main>
+        <!-- ('NAME',minOfcust,maxOfcust,avgCookie) -->
+
+        <form id="form">
+
+            <fieldset>
+
+                <label for="nameField">Shop Name:</label>
+                <input type="text" name="nameField" id="nameField" required>
+
+
+                <br>
+                <br>
+
+                <label for="minOfcusField">Min Number of Customer:</label>
+
+                <input type="number" name="minOfcusField" id="minOfcusField" required>
+
+                <br>
+                <br>
+
+                <label for="maxOfcusField">Max Number of Customer:</label>
+
+                <input type="number" name="maxOfcusField" id="maxOfcusField" required>
+
+
+                <br>
+                <br>
+
+                <label for="avgCookieField">Average Number of Cookies:</label>
+
+                <input type="float" name="avgCookieField" id="avgCookieField" required>
+
+                
+                <br>
+                <br>
+                
+                <input type="submit">
+
+
+
+            </fieldset>
+
+
+
+
+        </form>
+
+
+        </div>
+
+        <br>
+        <br>
+        <div id="parent"> </div>
+    </main>
+    <footer>
+    </footer>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -170,6 +170,97 @@ function makeFooter() {
 makeHeader();
 
 
+let form = document.getElementById('form');
+
+// adding the event listener
+form.addEventListener('submit', formSubmitter);
+
+// create the function that will rn when we submit the form
+
+function formSubmitter(event) {
+    event.preventDefault();
+    console.log(event);
+    // console.log(event.target.likesField.value);
+    let shopName = event.target.nameField.value;
+    // console.log(name);
+
+    let min = event.target.minOfcusField.value;
+
+    // console.log(likes);
+
+
+    let max = event.target.maxOfcusField.value;
+
+    let avg = event.target.avgCookieField.value;
+
+    let addedshop = new City(shopName, min, max, avg)
+
+
+
+
+    // console.log(cityarray[i]);
+    addedshop.CalCustPerhour();
+    addedshop.CalCookiePerhour();
+    addedshop.render();
+
+    makeFooter();
+    // parent.textContent = '';
+
+    console.log(addedshop);
+
+
+}
+makeFooter();
+
+makeHeader();
+// parentElement.textContent = '';
+
+
+
+//footer
+
+function makeFooter(){
+
+    let footerRow=document.createElement('tr');
+
+    table.appendChild(footerRow);
+
+    let firstTh=document.createElement('th');
+
+    footerRow.appendChild(firstTh);
+
+    firstTh.textContent='Totals';
+
+
+    let totalOftotal = 0 ;
+    
+    for (let i = 0; i < hoursarray.length; i++) {
+        console.log(hoursarray[i]);
+        let TotalPerH=0;
+
+        for (let j = 0; j < cityarray.length; j++) {
+            TotalPerH+=cityarray[j].cookiesPerhour[i];
+            totalOftotal+=cityarray[j].cookiesPerhour[i];
+            
+        }
+
+        console.log(TotalPerH);
+        console.log(totalOftotal);
+
+        let footerTh = document.createElement('th');
+        footerRow.appendChild(footerTh)
+        footerTh.textContent= TotalPerH;
+        
+    }
+
+    let lastTh=document.createElement('th');
+
+    footerRow.appendChild(lastTh);
+
+    lastTh.textContent= totalOftotal;
+}
+
+
 for (let i = 0; i < cityarray.length; i++) {
     // console.log(cityarray[i]);
     cityarray[i].CalCustPerhour();
@@ -177,60 +268,3 @@ for (let i = 0; i < cityarray.length; i++) {
     cityarray[i].render();
 
 }
-makeFooter();
-
-// console.log(parent);
-
-// create table
-
-
-// append
-
-
-
-// creating the header row:
-// let headingRow = document.createElement('tr');
-
-// // append it o the table
-// table.appendChild(headingRow);
-
-// // MAKING THE TH
-// let headings = ['name'];
-
-
-// for (let i = 0; i < hoursarray.length; i++) {
-//     // make th element
-//     let thElement = document.createElement('th');
-
-//     // append
-//     headingRow.appendChild(thElement);
-
-//     // text conent
-//     thElement.textContent = hoursarray[i]
-// }
-
-// City.prototype.render = function () {
-
-//     for (let i = 0; i < this.randNumOfCus.length; i++) {
-//         // make th element
-//         let dataRow = document.createElement('td');
-
-//         // append
-//         table.appendChild(dataRow);
-
-//         let ct1 = document.createElement('td');
-//         dataRow.appendChild(ct1);
-
-//         ct1.textContent = `${this.name}`;
-//     }
-
-// }
-// for (let i = 0; i < cityarray.length; i++) {
-//     cityarray[i].amani();
-//     cityarray[i].render();
-// }
-
-// // let td1=document.createElement('td')
-// // dataRow.appendChild(td1)
-// // td1.textContent=this.
-// // Places()
