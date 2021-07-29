@@ -93,6 +93,7 @@ function makeHeader() {
 
 
 // rende method
+
 City.prototype.render = function () {
 
     let dataRow = document.createElement('tr');
@@ -121,6 +122,53 @@ City.prototype.render = function () {
 }
 
 
+
+
+//footer
+
+function makeFooter() {
+
+
+    let footerRow = document.createElement('tr');
+
+    table.appendChild(footerRow);
+
+    let firstTh = document.createElement('th');
+
+    footerRow.appendChild(firstTh);
+
+    firstTh.textContent = 'Totals';
+
+
+    let totalOftotal = 0;
+
+    for (let i = 0; i < hoursarray.length; i++) {
+        // console.log(hoursarray[i]);
+
+        let TotalPerH = 0;
+
+        for (let j = 0; j < cityarray.length; j++) {
+            TotalPerH += cityarray[j].cookiesPerhour[i];
+            totalOftotal += cityarray[j].cookiesPerhour[i];
+
+        }
+
+        // console.log(TotalPerH);
+        // console.log(totalOftotal);
+
+        let footerTh = document.createElement('th');
+        footerRow.appendChild(footerTh)
+        footerTh.textContent = TotalPerH;
+
+    }
+
+    let lastTh = document.createElement('th');
+
+    footerRow.appendChild(lastTh);
+
+    lastTh.textContent = totalOftotal;
+}
+makeHeader();
 
 
 
@@ -172,7 +220,7 @@ function formSubmitter(event) {
 
 
 }
-
+makeFooter();
 
 
 // parentElement.textContent = '';
