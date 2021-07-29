@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(116, 180, 119);
+    background-color: rgb(151, 123, 123);
     margin: 0;
   }
   
@@ -11,19 +11,19 @@ body{
     font-family: 'Zilla Slab Highlight', cursive;
     float: left;
     padding-left: 50px;
-  color: rgb(83, 165, 62);
+  color: rgb(165, 62, 96);
   
   } 
   h2{
     font-family: 'Zilla Slab Highlight', cursive;
-    color: rgb(192, 194, 76);
+    color: rgb(68, 24, 28);
 
   }
 
   h3 {
     font-family: 'Zilla Slab Highlight', cursive;
     font-size: 2.5em;
-    color: rgb(211, 159, 48);
+    color: rgb(97, 10, 10);
   
 
   }
@@ -35,7 +35,7 @@ body{
   
   .hp {
     
-   background-color: rgb(124, 163, 87);
+   background-color: rgb(233, 206, 206);
     margin: 100px 100px 100px 100px;
     padding: 50px 50px 50px 50px;
   }
@@ -56,10 +56,10 @@ body{
   p{
     font-family: 'Slabo 27px', serif;
     font-size: 1.5em;
-    color: rgb(53, 160, 11);
+    color: rgb(83, 21, 85);
   }
   
   footer{
-     background-color: green;
+     background-color: rgb(128, 0, 85);
      height: 30px;
   }
