@@ -113,7 +113,7 @@ City.prototype.render = function () {
     }
 
     let totalTd = document.createElement('td');
-    
+
     dataRow.appendChild(totalTd);
 
     totalTd.textContent = this.totalCookiePerday;
@@ -127,6 +127,7 @@ City.prototype.render = function () {
 //footer
 
 function makeFooter() {
+
 
     let footerRow = document.createElement('tr');
 
@@ -170,6 +171,7 @@ function makeFooter() {
 makeHeader();
 
 
+
 let form = document.getElementById('form');
 
 // adding the event listener
@@ -184,24 +186,32 @@ function formSubmitter(event) {
     let shopName = event.target.nameField.value;
     // console.log(name);
 
-    let min = event.target.minOfcusField.value;
+    let min = parseInt(event.target.minOfcusField.value);
 
     // console.log(likes);
 
 
-    let max = event.target.maxOfcusField.value;
+    let max = parseInt(event.target.maxOfcusField.value);
 
-    let avg = event.target.avgCookieField.value;
+    let avg = parseFloat(event.target.avgCookieField.value);
 
     let addedshop = new City(shopName, min, max, avg)
 
-
+    table.textContent = "";
 
 
     // console.log(cityarray[i]);
     addedshop.CalCustPerhour();
     addedshop.CalCookiePerhour();
-    addedshop.render();
+    // addedshop.render();
+    makeHeader();
+    for (let i = 0; i < cityarray.length; i++) {
+        // console.log(cityarray[i]);
+        // cityarray[i].CalCustPerhour();
+        // cityarray[i].CalCookiePerhour();
+        cityarray[i].render();
+
+    }
 
     makeFooter();
     // parent.textContent = '';
@@ -212,36 +222,36 @@ function formSubmitter(event) {
 }
 makeFooter();
 
-makeHeader();
+
 // parentElement.textContent = '';
 
 
 
 //footer
 
-function makeFooter(){
+function makeFooter() {
 
-    let footerRow=document.createElement('tr');
+    let footerRow = document.createElement('tr');
 
     table.appendChild(footerRow);
 
-    let firstTh=document.createElement('th');
+    let firstTh = document.createElement('th');
 
     footerRow.appendChild(firstTh);
 
-    firstTh.textContent='Totals';
+    firstTh.textContent = 'Totals';
 
 
-    let totalOftotal = 0 ;
-    
+    let totalOftotal = 0;
+
     for (let i = 0; i < hoursarray.length; i++) {
         console.log(hoursarray[i]);
-        let TotalPerH=0;
+        let TotalPerH = 0;
 
         for (let j = 0; j < cityarray.length; j++) {
-            TotalPerH+=cityarray[j].cookiesPerhour[i];
-            totalOftotal+=cityarray[j].cookiesPerhour[i];
-            
+            TotalPerH += cityarray[j].cookiesPerhour[i];
+            totalOftotal += cityarray[j].cookiesPerhour[i];
+
         }
 
         console.log(TotalPerH);
@@ -249,15 +259,15 @@ function makeFooter(){
 
         let footerTh = document.createElement('th');
         footerRow.appendChild(footerTh)
-        footerTh.textContent= TotalPerH;
-        
+        footerTh.textContent = TotalPerH;
+
     }
 
-    let lastTh=document.createElement('th');
+    let lastTh = document.createElement('th');
 
     footerRow.appendChild(lastTh);
 
-    lastTh.textContent= totalOftotal;
+    lastTh.textContent = totalOftotal;
 }
 
 
